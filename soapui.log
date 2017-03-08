@@ -1,0 +1,16 @@
+2017-03-08 15:51:02,458 WARN  [SoapUI] Missing folder [C:\Users\cargauto\workspace_neon\cucumberSoapUI\ext] for external libraries
+2017-03-08 15:51:02,866 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\cargauto\workspace_neon\cucumberSoapUI\soapui-settings.xml]
+2017-03-08 15:51:10,888 INFO  [PluginManager] 0 plugins loaded in 2 ms
+2017-03-08 15:51:10,888 INFO  [DefaultSoapUICore] All plugins loaded
+2017-03-08 15:51:12,695 INFO  [WsdlProject] Loaded project from [file:/C:/Users/cargauto/workspace_neon/cucumberSoapUI/proyectos_soapui/0000-AUT-002-soapui-project.xml]
+2017-03-08 15:51:12,705 INFO  [SoapUITestCaseRunner] Running SoapUI tests in project [0000_AUT-002]
+2017-03-08 15:51:12,707 INFO  [SoapUITestCaseRunner] Running Project [0000_AUT-002], runType = SEQUENTIAL
+2017-03-08 15:51:12,744 INFO  [SoapUITestCaseRunner] Running SoapUI testcase [generarDocumentoGEDO TestCase]
+2017-03-08 15:51:12,762 INFO  [SoapUITestCaseRunner] running step [parámetrosEntradaRequest]
+2017-03-08 15:51:13,374 INFO  [SoapUITestCaseRunner] running step [generarDocumentoGEDO]
+2017-03-08 15:51:15,895 INFO  [SoapUITestCaseRunner] Assertion [<urlArchivoGenerado>] has status VALID
+2017-03-08 15:51:15,896 INFO  [SoapUITestCaseRunner] Assertion [<numero>] has status VALID
+2017-03-08 15:51:15,896 INFO  [SoapUITestCaseRunner] Assertion [Invalid HTTP Status Codes] has status VALID
+2017-03-08 15:51:15,896 INFO  [SoapUITestCaseRunner] running step [NúmeroGEDO]
+2017-03-08 15:51:15,901 INFO  [SoapUITestCaseRunner] Finished running SoapUI testcase [generarDocumentoGEDO TestCase], time taken: 3127ms, status: FINISHED
+2017-03-08 15:51:15,901 INFO  [SoapUITestCaseRunner] Project [0000_AUT-002] finished with status [FINISHED] in 3187ms
