@@ -5,6 +5,10 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
 import com.eviware.soapui.tools.SoapUITestCaseRunner;
 
 public class Test_cucumber_soapui {
@@ -21,8 +25,33 @@ public class Test_cucumber_soapui {
 	}
 
 	public void setUpEscenario01() throws Exception {
-		// setUpSettings();
 		runner.setProjectFile("proyectos_soapui/0000-AUT-002-soapui-project.xml");
+	}
+
+	/**
+	 * * A partir de un archivo plano de properties se setean las mismas al
+	 * runner del proyecto SoapUI a ejecutar
+	 * 
+	 * @throws Exception
+	 **/
+	public String[] parsearArchivoTextoAPropertiesProyectoSoap(String rutaArchivoProperty) throws Exception {
+        ArrayList<String> lista = new ArrayList<String>();
+		try {
+			FileReader archivo = new FileReader(rutaArchivoProperty);
+			BufferedReader buffer = new BufferedReader(archivo);
+
+			String temp = buffer.readLine();
+			Byte i;
+			for (i = 0; temp != null; temp = buffer.readLine()) {
+				lista.add(temp);
+				i++;
+			}
+			buffer.close();
+		} catch (Exception e) {
+			throw e;
+		}
+		String[] projectProperties = lista.toArray(new String[lista.size()]);
+		return projectProperties;
 	}
 
 	/**
@@ -35,17 +64,20 @@ public class Test_cucumber_soapui {
 		runner.setProjectFile("proyectos_soapui/0000-AUT-004-soapui-project.xml");
 		// El proyecto Soap tiene configuradas las siguientes "custom
 		// properties", se setean valores para ser enviados en el request
-		//Ejemplo que genera da ok al ejecutarse
-//		String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
-//				"data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
-//				"referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI", "sistemaOrigen=SQA01",
-//				"usuario=DJANGO", "numero=" };
-		//Ejemplo que genera una falla
-		String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
-				"data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
-				"referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI", "sistemaOrigen=SQA01",
-				"usuario=AUTOMATIZADOA", "numero=" };
-		runner.setProjectProperties(projectProperties);
+		// Ejemplo que genera da ok al ejecutarse
+		// String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
+		// "data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
+		// "referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI",
+		// "sistemaOrigen=SQA01",
+		// "usuario=DJANGO", "numero=" };
+		// Ejemplo que genera una falla
+		// String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
+		// "data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
+		// "referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI",
+		// "sistemaOrigen=SQA01",
+		// "usuario=AUTOMATIZADOA", "numero=" };
+		runner.setProjectProperties(
+				parsearArchivoTextoAPropertiesProyectoSoap("properties/Properties_generarDocumentoGEDO.txt"));
 	}
 
 	@Given("^A partir de un acrónimo GEDO y un usuario con permisos de firma sobre el mismo$")
@@ -73,7 +105,7 @@ public class Test_cucumber_soapui {
 		 * TODO Levantar las propiedades del proyecto para obtener el número
 		 * GEDO generado
 		 */
-		// String[] properties = runner.getProjectProperties();
+		// properties = runner.getProjectProperties();
 		// System.out.println("Properties: " + properties.toString());
 	}
 
@@ -95,8 +127,8 @@ public class Test_cucumber_soapui {
 		 * TODO Levantar las propiedades del proyecto para obtener el error que
 		 * debería arrojar el servicio
 		 */
-		properties = runner.getProjectProperties();
-		System.out.println("Properties length: " + properties.length);
+		// properties = runner.getProjectProperties();
+		// System.out.println("Properties length: " + properties.length);
 	}
 
 }
