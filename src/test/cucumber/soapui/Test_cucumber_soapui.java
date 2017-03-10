@@ -36,15 +36,15 @@ public class Test_cucumber_soapui {
 		// El proyecto Soap tiene configuradas las siguientes "custom
 		// properties", se setean valores para ser enviados en el request
 		//Ejemplo que genera da ok al ejecutarse
-		String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
-				"data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
-				"referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI", "sistemaOrigen=SQA01",
-				"usuario=DJANGO", "numero=" };
-		//Ejemplo que genera una falla
 //		String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
 //				"data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
 //				"referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI", "sistemaOrigen=SQA01",
-//				"usuario=AUTOMATIZADOA", "numero=" };
+//				"usuario=DJANGO", "numero=" };
+		//Ejemplo que genera una falla
+		String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
+				"data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
+				"referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI", "sistemaOrigen=SQA01",
+				"usuario=AUTOMATIZADOA", "numero=" };
 		runner.setProjectProperties(projectProperties);
 	}
 
