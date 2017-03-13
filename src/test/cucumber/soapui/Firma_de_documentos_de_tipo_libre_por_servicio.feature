@@ -1,4 +1,4 @@
-Feature: Cucumber SoapUI 
+Feature: Firma de documentos de tipo libre por servicio
 
 Scenario: Crear un documento GEDO del tipo libre mediante servicio 
 

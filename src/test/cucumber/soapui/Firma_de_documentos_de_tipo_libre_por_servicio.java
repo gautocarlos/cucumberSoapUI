@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import com.eviware.soapui.tools.SoapUITestCaseRunner;
 
-public class Test_cucumber_soapui {
+public class Firma_de_documentos_de_tipo_libre_por_servicio {
 	private SoapUITestCaseRunner runner = new SoapUITestCaseRunner();
 
 	/**
@@ -62,20 +62,6 @@ public class Test_cucumber_soapui {
 	 */
 	public void setUpEscenario02() throws Exception {
 		runner.setProjectFile("proyectos_soapui/0000-AUT-004-soapui-project.xml");
-		// El proyecto Soap tiene configuradas las siguientes "custom
-		// properties", se setean valores para ser enviados en el request
-		// Ejemplo que genera da ok al ejecutarse
-		// String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
-		// "data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
-		// "referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI",
-		// "sistemaOrigen=SQA01",
-		// "usuario=DJANGO", "numero=" };
-		// Ejemplo que genera una falla
-		// String[] projectProperties = { "acronimoTipoDocumento=ZAUL5",
-		// "data=U1FBIC0gUHJ1ZWJhIEludGVncmFjacOzbjogQ3VjdW1iZXIgLSBKVW5pdCAtIFNvYXBVSQ==",
-		// "referencia=SQA - Prueba Integración: Cucumber - JUnit - SoapUI",
-		// "sistemaOrigen=SQA01",
-		// "usuario=AUTOMATIZADOA", "numero=" };
 		runner.setProjectProperties(
 				parsearArchivoTextoAPropertiesProyectoSoap("properties/Properties_generarDocumentoGEDO.txt"));
 	}
@@ -105,19 +91,15 @@ public class Test_cucumber_soapui {
 		 * TODO Levantar las propiedades del proyecto para obtener el número
 		 * GEDO generado
 		 */
-		// properties = runner.getProjectProperties();
-		// System.out.println("Properties: " + properties.toString());
 	}
 
 	@Given("^A partir de un acrónimo GEDO y un usuario sin permisos de firma sobre el mismo$")
 	public void a_partir_de_un_acronimo_GEDO_y_un_usuario_sin_permisos_de_firma_sobre_el_mismo() throws Throwable {
 		this.setUpEscenario02();
-		// String[] projectProperties = null;
 		/**
 		 * TODO Crear/Levantar y pasar propiedades de ejecución al proyecto
 		 * SoapUI mediante un mapa
 		 */
-		// runner.setProjectProperties(projectProperties);
 
 	}
 
@@ -127,8 +109,6 @@ public class Test_cucumber_soapui {
 		 * TODO Levantar las propiedades del proyecto para obtener el error que
 		 * debería arrojar el servicio
 		 */
-		// properties = runner.getProjectProperties();
-		// System.out.println("Properties length: " + properties.length);
 	}
 
 }
